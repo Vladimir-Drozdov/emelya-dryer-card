@@ -833,7 +833,6 @@ class EmelyaDryerCardEditor extends LitElement {
 
       if (resp.ok) {
         const json = await resp.json();
-        // /api/image/upload возвращает { id, ... }, URL формируем сами
         const imgPath = `/api/image/serve/${json.id}/original`;
         this._setImage(imgPath);
         this._uploadState = "success";
